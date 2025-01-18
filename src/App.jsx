@@ -45,7 +45,7 @@ function App() {
           {selectedCategory ? (
              <div className={`questionsTitle ` + selectedCategory.toLowerCase() + `Btn`}>
             <img
-              src={`src/assets/images/${selectedCategory.toLowerCase()}-icon.svg`}
+              src={`./public/${selectedCategory.toLowerCase()}-icon.svg`}
               alt={`${selectedCategory} icon`}
             />
             <p>{selectedCategory}</p>
@@ -103,7 +103,7 @@ function App() {
                     className={category.toLowerCase() + `Btn`}
                   >
                     <img
-                      src={`src/assets/images/${category.toLowerCase()}-icon.svg`}
+                      src={`./public/${category.toLowerCase()}-icon.svg`}
                       alt={`${category} icon`}
                     />
                     <span>{category}</span>
