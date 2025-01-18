@@ -440,7 +440,7 @@ export default function Questions({ selectedCategory, onRetry }) {
                 class={`questionsTitle ${selectedQuiz.title.toLowerCase()}Btn`}
               >
                 <img
-                  src={`/images/${selectedQuiz.title.toLowerCase()}-icon.svg`}
+                  src={`./assets/images/${selectedQuiz.title.toLowerCase()}-icon.svg`}
                 />
                 <p>{selectedQuiz.title}</p>
               </div>
