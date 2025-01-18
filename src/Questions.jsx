@@ -440,7 +440,7 @@ export default function Questions({ selectedCategory, onRetry }) {
                 class={`questionsTitle ${selectedQuiz.title.toLowerCase()}Btn`}
               >
                 <img
-                  src={`./public/${selectedQuiz.title.toLowerCase()}-icon.svg`}
+                  src={`./${selectedQuiz.title.toLowerCase()}-icon.svg`}
                 />
                 <p>{selectedQuiz.title}</p>
               </div>
@@ -515,7 +515,7 @@ export default function Questions({ selectedCategory, onRetry }) {
                             option === correctAnswer &&
                             selectedChoice !== correctAnswer && (
                               <img
-                                src="./public/correctIcon.svg"
+                                src="./correctIcon.svg"
                                 alt="Correct"
                                 className="tickIcon"
                               />
@@ -524,7 +524,7 @@ export default function Questions({ selectedCategory, onRetry }) {
                             option === selectedChoice &&
                             option !== correctAnswer && (
                               <img
-                                src="./public/wrongIcon.svg"
+                                src="./wrongIcon.svg"
                                 alt="Incorrect"
                                 className="wrongIcon"
                               />
