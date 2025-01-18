@@ -1,0 +1,133 @@
+
+.lightDark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  justify-content: end;
+  height: 40px;
+}
+
+.themeSwitch {
+  position: relative;
+  appearance: none;
+  background-color: #a729f5;
+  height: 20px;
+  width: 32px;
+  display: inline-flex;
+  margin: 0;
+  border-radius: 999px;
+  box-sizing: border-box;
+  padding: 4px;
+  color: #848ead;
+  transition: background-color 0.3s ease;
+}
+
+.themeSwitch:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.themeSwitch:checked {
+  justify-content: end;
+}
+
+
+body.dark-mode .container {
+  background-color: #313e51;
+  background-image: url("../images/container-bg-top-dark.svg");
+}
+
+.light-mode-icon {
+  color: #626c7f;
+}
+
+
+body.dark-mode .light-mode-icon {
+  color: white;
+}
+
+.dark-mode-icon {
+  color: #626c7f;
+}
+
+body.dark-mode .dark-mode-icon {
+  color: white;
+}
+
+body.dark-mode h1 {
+  color: #ffffff;
+}
+
+body.dark-mode h6 {
+  color: #abc1e1;
+}
+
+body.dark-mode .topicSelection button {
+  background-color: #3b4d66;
+  box-shadow: 0px 16px 40px 0px #313e5124;
+  border: 3px solid #3b4d66;
+}
+
+body.dark-mode .topicSelection button span {
+  color: #ffffff;
+}
+
+body.dark-mode .categoryBtns button {
+  background-color: #3b4d66;
+  box-shadow: 0px 16px 40px 0px #313e5124;
+  border: 3px solid #3b4d66;
+}
+
+body.dark-mode .categoryBtns button span {
+  color: #ffffff;
+}
+
+
+body.dark-mode .questionsTitle p {
+  color: #ffffff;
+}
+
+body.dark-mode .question {
+  color: #ffffff;
+}
+
+
+body.dark-mode .progressBar {
+  background-color: #3b4d66;
+}
+
+body.dark-mode h2 {
+  color: white;
+}
+
+
+body.dark-mode h2 span {
+  color: white;
+}
+
+body.dark-mode .resultBox {
+  background-color: #3b4d66;
+  box-shadow: 0px 16px 40px 0px #313e5124;
+}
+
+
+body.dark-mode .score p {
+  color: #ffffff;
+}
+
+
+body.dark-mode .score p span {
+  color: #abc1e1;
+}
+
+body.dark-mode .progressBarOuter {
+  background-color: #3B4D66;
+}
+
+
