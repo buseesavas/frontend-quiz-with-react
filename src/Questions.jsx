@@ -397,15 +397,16 @@ export default function Questions({ selectedCategory, onRetry }) {
       setSelectedChoice(option);
     }
   };
-  
-  const progressPercentage = ((currentQuestionIndex + 1) / selectedQuiz.questions.length) * 100;
+
+  const progressPercentage =
+    ((currentQuestionIndex + 1) / selectedQuiz.questions.length) * 100;
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < selectedQuiz.questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedChoice(null);
       setIsSubmitted(false);
-    } 
+    }
   };
 
   const handleSubmit = () => {
@@ -417,8 +418,8 @@ export default function Questions({ selectedCategory, onRetry }) {
       }
       setIsSubmitted(true);
     }
-  }
-  
+  };
+
   const selections = ["A", "B", "C", "D"];
 
   const categories = data.quizzes.map((quiz) => quiz.title);
@@ -450,7 +451,9 @@ export default function Questions({ selectedCategory, onRetry }) {
                 </p>
               </div>
             </div>
-            <button className="playAgainBtn" onClick={onRetry}>Tekrar Dene</button>
+            <button className="playAgainBtn" onClick={onRetry}>
+              Tekrar Dene
+            </button>
           </div>
         </>
       ) : (
@@ -476,50 +479,57 @@ export default function Questions({ selectedCategory, onRetry }) {
                       onClick={() => handleOptionClick(option)}
                       className={`optionBtn ${
                         isSubmitted
-                        ? option === correctAnswer
-                          ? selectedChoice === correctAnswer
-                            ? "correct selected"
-                            : "correct"
-                          : option === selectedChoice
-                          ? "inCorrect"
+                          ? option === correctAnswer
+                            ? selectedChoice === correctAnswer
+                              ? "correct selected"
+                              : "correct"
+                            : option === selectedChoice
+                            ? "inCorrect"
+                            : ""
+                          : selectedChoice === option
+                          ? "selected"
                           : ""
-                        : selectedChoice === option
-                        ? "selected"
-                        : ""
-                    }`}
+                      }`}
                     >
                       <div className="selectionBox">
-                      <h5
-      className={`${
-        isSubmitted
-          ? option === correctAnswer
-            ? selectedChoice === correctAnswer
-              ? "selectionsCorrect"
-              : "selectionsCorrectWithoutBorder"
-            : option === selectedChoice
-            ? "selectionsIncorrect"
-            : ""
-          : selectedChoice === option
-          ? "selectionsSelected"
-          : ""
-      }`}
-    >{selections[index]}</h5>
-                        <span>{option} {isSubmitted && option === correctAnswer && selectedChoice !== correctAnswer && (
-      <img
-        src="/images/correctIcon.svg"
-        alt="Correct"
-        className="tickIcon"
-      />
-    )}
-    {isSubmitted && option === selectedChoice && option !== correctAnswer && (
-      <img
-        src="/images/wrongIcon.svg"
-        alt="Incorrect"
-        className="wrongIcon"
-      />
-    )}
-    </span>
-                       
+                        <h5
+                          className={`${
+                            isSubmitted
+                              ? option === correctAnswer
+                                ? selectedChoice === correctAnswer
+                                  ? "selectionsCorrect"
+                                  : "selectionsCorrectWithoutBorder"
+                                : option === selectedChoice
+                                ? "selectionsIncorrect"
+                                : ""
+                              : selectedChoice === option
+                              ? "selectionsSelected"
+                              : ""
+                          }`}
+                        >
+                          {selections[index]}
+                        </h5>
+                        <span>
+                          {option}{" "}
+                          {isSubmitted &&
+                            option === correctAnswer &&
+                            selectedChoice !== correctAnswer && (
+                              <img
+                                src="/images/correctIcon.svg"
+                                alt="Correct"
+                                className="tickIcon"
+                              />
+                            )}
+                          {isSubmitted &&
+                            option === selectedChoice &&
+                            option !== correctAnswer && (
+                              <img
+                                src="/images/wrongIcon.svg"
+                                alt="Incorrect"
+                                className="wrongIcon"
+                              />
+                            )}
+                        </span>
                       </div>
                     </button>
                   )
@@ -547,7 +557,6 @@ export default function Questions({ selectedCategory, onRetry }) {
   );
 }
 
-
 function ProgressBar({ progressPercentage }) {
   return (
     <div className="progressBarOuter">
@@ -557,6 +566,4 @@ function ProgressBar({ progressPercentage }) {
       ></div>
     </div>
   );
-};
-
-
+}
