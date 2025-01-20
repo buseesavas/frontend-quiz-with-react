@@ -406,6 +406,8 @@ export default function Questions({ selectedCategory, onRetry }) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedChoice(null);
       setIsSubmitted(false);
+    } else {
+      setIsSubmitted(false); 
     }
   };
 
@@ -417,6 +419,12 @@ export default function Questions({ selectedCategory, onRetry }) {
         setCorrectAnswersCount((prevCount) => prevCount + 1);
       }
       setIsSubmitted(true);
+
+      if (currentQuestionIndex === selectedQuiz.questions.length - 1) {
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 2000); 
+      }
     }
   };
 
@@ -446,7 +454,7 @@ export default function Questions({ selectedCategory, onRetry }) {
               </div>
               <div class="score">
                 <p>
-                  {correctAnswersCount}{" "}
+                  {correctAnswersCount}
                   <span>{selectedQuiz.questions.length} üzerinden</span>
                 </p>
               </div>
@@ -478,17 +486,18 @@ export default function Questions({ selectedCategory, onRetry }) {
                       key={index}
                       onClick={() => handleOptionClick(option)}
                       className={`optionBtn ${
-                        isSubmitted
-                          ? option === correctAnswer
-                            ? selectedChoice === correctAnswer
-                              ? "correct selected"
-                              : "correct"
-                            : option === selectedChoice
-                            ? "inCorrect"
-                            : ""
-                          : selectedChoice === option
-                          ? "selected"
-                          : ""
+                        isSubmitted 
+                          ? (option === correctAnswer 
+                              ? (selectedChoice === correctAnswer 
+                                  ? "correct selected" 
+                                  : "correct") 
+                              : (option === selectedChoice 
+                                  ? "inCorrect" 
+                                  : "")
+                            ) 
+                          : (selectedChoice === option 
+                              ? "selected" 
+                              : "")
                       }`}
                     >
                       <div className="selectionBox">

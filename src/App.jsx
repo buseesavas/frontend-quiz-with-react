@@ -25,7 +25,7 @@ function App() {
   const toggleTheme = () => {
     setIsDarkMode(prevMode => {
       const newMode = !prevMode;
-      localStorage.setItem('theme', newMode ? 'dark' : 'light'); // Tema kaydet
+      localStorage.setItem('theme', newMode ? 'dark' : 'light'); 
       document.body.classList.toggle('dark-mode', newMode);
       return newMode;
     });
@@ -36,7 +36,7 @@ function App() {
   };
 
   const handleRetry = () => {
-    setSelectedCategory(null); // Kategoriyi sıfırlar ve kullanıcıyı kategori seçim ekranına döner
+    setSelectedCategory(null); 
   };
 
   return (
